@@ -1,94 +1,51 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Specpedinfo.sk</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpecPedInfo - Úvod</title>
   <style>
+    /* Reset a základné štýly */
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background-color: #f7f9fb;
+      background: #f9f7f1;
       color: #333;
     }
 
-    header {
-      background-color: #4e73df;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #2e59d9;
+    /* Menu */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background: #444; /* tmavá šedá */
       display: flex;
-      justify-content: center;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      display: block;
       padding: 15px 20px;
-      display: inline-block;
+      color: #f0a500; /* teplá oranžová */
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
     }
 
-    nav a:hover {
-      background-color: #224abe;
+    nav ul li:hover {
+      background: #f0a500; /* oranžová pozadie pri hover */
     }
 
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
+    nav ul li:hover > a {
+      color: #444; /* tmavá farba textu pri hover na položke */
     }
 
-    .hero img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 15px;
-    }
-
-    .content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-    }
-
-    footer {
-      background-color: #2e59d9;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>Specpedinfo.sk</h1>
-  <p>Stránka pre rodičov a odborníkov v špeciálnej pedagogike</p>
-</header>
-
-<nav>
-  <a href="index.html">Domov</a>
-  <a href="onas.html">O nás</a>
-  <a href="rodicia.html">Pre rodičov</a>
-  <a href="odbornici.html">Pre odborníkov</a>
-  <a href="kontakt.html">Kontakt</a>
-</nav>
-
-<section class="hero">
-  <img src="img/inkluzivne-deti.jpg" alt="Inkluzívne deti so ŠVVP">
-</section>
-
-<div class="content">
-  <h2>Vitajte!</h2>
-  <p>Táto stránka poskytuje overené a ľudsky podané informácie o špeciálnych potrebách detí. Je určená rodičom aj odborníkom, ktorí hľadajú praktické rady, oporu a odbornosť na jednom mieste.</p>
-</div>
-
-<footer>
-  &copy; 2025 Mgr. Kristína Vasiľ | specpedinfo.sk
-</footer>
-
-</body>
-</html>
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #555;
