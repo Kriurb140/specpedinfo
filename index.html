@@ -8,12 +8,12 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #f5f5dc; /* krémovo-béžové pozadie */
+      background-color: #f5f5dc;
       font-family: Arial, sans-serif;
     }
 
     nav {
-      background-color: #007BFF; /* modré pozadie menu */
+      background-color: #a7c7e7;
       width: 100%;
     }
 
@@ -23,15 +23,17 @@
       padding: 0;
       display: flex;
       justify-content: center;
+      position: relative;
     }
 
     nav ul li {
+      position: relative;
       margin: 0 20px;
     }
 
     nav ul li a {
       display: block;
-      color: white;
+      color: orange;
       text-align: center;
       padding: 16px;
       text-decoration: none;
@@ -39,10 +41,39 @@
       font-size: 1.2em;
     }
 
+    nav ul li:hover > ul {
+      display: block;
+    }
+
+    nav ul ul {
+      display: none;
+      position: absolute;
+      top: 56px;
+      left: 0;
+      background-color: #a7c7e7;
+      padding: 0;
+      list-style: none;
+      min-width: 280px;
+      z-index: 1000;
+    }
+
+    nav ul ul li {
+      width: 100%;
+      margin: 0;
+    }
+
+    nav ul ul li a {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 1em;
+    }
+
     h1 {
       text-align: center;
       font-size: 3em;
       margin-top: 20px;
+      font-weight: bold;
+      color: #4a90e2;
     }
 
     .intro-text {
@@ -65,28 +96,34 @@
   <!-- Navigácia -->
   <nav>
     <ul>
-    <li><a href="#">Domov</a></li>
-  <li><a href="#">O nás</a></li>
-  <li><a href="#">Infobrožúry</a></li>
-  <li><a href="#">Výskumy</a></li>
-  <li><a href="#">Novinky</a></li>
-  <li><a href="#">Kontakt</a></li>
-</ul>
-
+      <li><a href="#">Domov</a></li>
+      <li><a href="#">O nás</a></li>
+      <li><a href="#">Infobrožúry, publikácie a články</a></li>
+      <li>
+        <a href="#">Podľa typu znevýhodnenia</a>
+        <ul>
+          <li><a href="#">Pedagogika mentálne znevýhodnených</a></li>
+          <li><a href="#">Pedagogika telesne znevýhodnených</a></li>
+          <li><a href="#">Pedagogika psychosociálne narušených</a></li>
+          <li><a href="#">Pedagogika jedincov s NKS</a></li>
+          <li><a href="#">Pedagogika jedincov s poruchami učenia a pozornosti</a></li>
+          <li><a href="#">Pedagogika jedincov s PAS</a></li>
+          <li><a href="#">Pedagogika viacnásobne znevýhodnených</a></li>
+          <li><a href="#">Pedagogika jedincov zo sociálne podmieneného prostredia</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Výskumy</a></li>
+      <li><a href="#">Novinky</a></li>
+      <li><a href="#">Kontakt</a></li>
     </ul>
   </nav>
 
   <!-- Úvodný obrázok -->
-<img src="images/uvodny-obrazok.png.png" alt="Inkluzívna ilustrácia" style="width:100%; height:auto;">
-
+  <img src="images/uvodny-obrazok.png" alt="Inkluzívna ilustrácia" class="hero-image">
 
   <!-- Nadpis -->
   <h1>SpecPedInfo</h1>
-<p class="intro-text">
-  Volám sa <strong>Mgr. Kristína Vasiľ</strong> a som špeciálna pedagogička. Cieľom tejto stránky je vytvoriť jedno prehľadné miesto, kde nájdete <strong>aktuálne informácie, infobrožúry, články a výskumné poznatky</strong> zo sveta špeciálnej pedagogiky. <br><br>
-  Chcem sprostredkovať nové poznatky <strong>zrozumiteľne, odborne, ale najmä prakticky</strong> – tak, aby im rozumeli nielen odborníci, ale aj rodičia, asistenti či pedagógovia v praxi.
-</p>
 
-
-</body>
-</html>
+  <!-- Úvodný text -->
+  <p class="intro-text">
+    Volám sa <strong>Mgr. Kristína Vasiľ</strong> a som špeciálna pedagogička. Cieľom tejto stránky je vytvoriť jedno prehľadné miesto, kde nájdete <strong>aktuálne informácie, infobrožúry, články a výskumné poznatky</strong> zo sveta špeciál
