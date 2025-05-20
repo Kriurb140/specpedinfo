@@ -4,121 +4,147 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SpecPedInfo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      background-color: #f5f5dc;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
     }
 
-    nav {
-      background-color: #a7c7e7; /* pôvodné pastelovo modré pozadie menu */
-      width: 100%;
+    header {
+      background-color: #2c3e50;
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      color: #ecf0f1;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
     }
 
     nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+      list-style: none;
       display: flex;
       justify-content: center;
-      position: relative;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 20px 0 0;
     }
 
     nav ul li {
+      margin: 10px 15px;
       position: relative;
-      margin: 0 20px;
     }
 
     nav ul li a {
-      display: block;
-      color: orange; /* pôvodná farba textu v menu */
-      text-align: center;
-      padding: 16px;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2em;
+      color: #ecf0f1;
+      font-weight: 500;
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #34495e;
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 45px;
+      left: 0;
+      background-color: #34495e;
+      border-radius: 6px;
+      padding: 10px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      min-width: 250px;
+      z-index: 1000;
     }
 
     nav ul li:hover > ul {
       display: block;
     }
 
-    nav ul ul {
-      display: none;
-      position: absolute;
-      top: 56px;
-      left: 0;
-      background-color: #a7c7e7;
-      padding: 0;
-      list-style: none;
-      min-width: 280px;
-      z-index: 1000;
-    }
-
-    nav ul ul li {
-      width: 100%;
+    nav ul li ul li {
       margin: 0;
     }
 
-    nav ul ul li a {
-      padding: 12px 16px;
-      text-align: left;
-      font-size: 1em;
+    nav ul li ul li a {
+      padding: 10px 20px;
+      display: block;
+    }
+
+    .hero-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 30px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     h1 {
       text-align: center;
-      font-size: 3em;
-      font-weight: bold;
-      color: #4a90e2; /* pastelovo modrý nadpis */
-      margin-top: 40px;
+      font-size: 3rem;
+      color: #2c3e50;
+      margin-top: 20px;
     }
 
     .intro-text {
       text-align: center;
-      font-size: 1.2em;
+      font-size: 1.2rem;
       max-width: 800px;
-      margin: 20px auto;
-      line-height: 1.6;
-    }
-
-    .hero-image {
-      max-width: 800px;
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
+      margin: 20px auto 40px auto;
+      line-height: 1.7;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigácia -->
-  <nav>
-    <ul>
-      <li><a href="#">Domov</a></li>
-      <li><a href="#">O nás</a></li>
-      <li><a href="#">Infobrožúry, publikácie a články</a></li>
-      <li>
-        <a href="#">Podľa typu znevýhodnenia</a>
+  <header>
+    <div class="container">
+      <div class="logo">SpecPedInfo</div>
+      <nav>
         <ul>
-          <li><a href="#">Pedagogika mentálne znevýhodnených</a></li>
-          <li><a href="#">Pedagogika telesne znevýhodnených</a></li>
-          <li><a href="#">Pedagogika psychosociálne narušených</a></li>
-          <li><a href="#">Pedagogika jedincov s NKS</a></li>
-          <li><a href="#">Pedagogika jedincov s poruchami učenia a pozornosti</a></li>
-          <li><a href="#">Pedagogika jedincov s PAS</a></li>
-          <li><a href="#">Pedagogika viacnásobne znevýhodnených</a></li>
-          <li><a href="#">Pedagogika jedincov zo sociálne podmieneného prostredia</a></li>
+          <li><a href="#">Domov</a></li>
+          <li><a href="#">O nás</a></li>
+          <li><a href="#">Infobrožúry, publikácie a články</a></li>
+          <li>
+            <a href="#">Podľa typu znevýhodnenia</a>
+            <ul>
+              <li><a href="#">Pedagogika mentálne znevýhodnených</a></li>
+              <li><a href="#">Pedagogika telesne znevýhodnených</a></li>
+              <li><a href="#">Pedagogika psychosociálne narušených</a></li>
+              <li><a href="#">Pedagogika jedincov s NKS</a></li>
+              <li><a href="#">Pedagogika jedincov s poruchami učenia a pozornosti</a></li>
+              <li><a href="#">Pedagogika jedincov s PAS</a></li>
+              <li><a href="#">Pedagogika viacnásobne znevýhodnených</a></li>
+              <li><a href="#">Pedagogika jedincov zo sociálne podmieneného prostredia</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Výskumy</a></li>
+          <li><a href="#">Novinky</a></li>
+          <li><a href="#">Kontakt</a></li>
         </ul>
-      </li>
-      <li><a href="#">Výskumy</a></li>
-      <li><a href="#">Novinky</a></li>
-      <li><a href="#">Kontakt</a></li>
-    </ul>
-  </nav>
+      </nav>
+    </div>
+  </header>
 
   <!-- Úvodný obrázok -->
   <img src="images/uvodny-obrazok.png" alt="Inkluzívna ilustrácia" class="hero-image">
