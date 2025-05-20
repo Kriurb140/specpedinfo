@@ -49,3 +49,145 @@
       top: 100%;
       left: 0;
       background: #555;
+      padding: 0;
+      min-width: 200px;
+      z-index: 1000;
+      border-radius: 0 0 5px 5px;
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      width: 100%;
+    }
+
+    nav ul li ul li a {
+      padding: 10px 20px;
+      color: #f9f7f1;
+      font-weight: normal;
+    }
+
+    nav ul li ul li a:hover {
+      background: #f0a500;
+      color: #444;
+    }
+
+    /* Sekcie */
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    /* Obrázok na úvod */
+    #uvod img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#uvod">Domov</a></li>
+      <li>
+        <a href="#oblasti">Oblasti ▼</a>
+        <ul>
+          <li><a href="#mentalne-znevyhodnenie">Mentálne znevýhodnenie</a></li>
+          <li><a href="#telesne-znevyhodnenie">Telesné znevýhodnenie</a></li>
+          <li><a href="#sluchove-znevyhodnenie">Sluchové znevýhodnenie</a></li>
+          <li><a href="#zrakove-znevyhodnenie">Zrakové znevýhodnenie</a></li>
+          <li><a href="#viacnasobne-znevyhodnenie">Viacnásobné znevýhodnenie</a></li>
+          <li><a href="#pas">PAS</a></li>
+          <li><a href="#dys">Diagnózy - DYS</a></li>
+          <li><a href="#poruchy-spravania">Poruchy správania</a></li>
+        </ul>
+      </li>
+      <li><a href="#publikacie">Publikácie</a></li>
+      <li><a href="#clanky">Články</a></li>
+      <li><a href="#onas">O nás</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <section id="uvod">
+    <h1>Vitajte na SpecPedInfo</h1>
+    <p>Vaša stránka s informáciami o špeciálnej pedagogike a podpore rodín.</p>
+    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80" alt="Vzdelávanie a podpora">
+  </section>
+
+  <section id="oblasti">
+    <h2>Oblasti znevýhodnení</h2>
+
+    <section id="mentalne-znevyhodnenie">
+      <h3>Mentálne znevýhodnenie</h3>
+      <p>Text o mentálnom znevýhodnení...</p>
+    </section>
+
+    <section id="telesne-znevyhodnenie">
+      <h3>Telesné znevýhodnenie</h3>
+      <p>Text o telesnom znevýhodnení...</p>
+    </section>
+
+    <section id="sluchove-znevyhodnenie">
+      <h3>Sluchové znevýhodnenie</h3>
+      <p>Text o sluchovom znevýhodnení...</p>
+    </section>
+
+    <section id="zrakove-znevyhodnenie">
+      <h3>Zrakové znevýhodnenie</h3>
+      <p>Text o zrakovom znevýhodnení...</p>
+    </section>
+
+    <section id="viacnasobne-znevyhodnenie">
+      <h3>Viacnásobné znevýhodnenie</h3>
+      <p>Text o viacnásobnom znevýhodnení...</p>
+    </section>
+
+    <section id="pas">
+      <h3>PAS</h3>
+      <p>Text o poruche autistického spektra (PAS)...</p>
+    </section>
+
+    <section id="dys">
+      <h3>Diagnózy - DYS</h3>
+      <p>Text o diagnostike DYS...</p>
+    </section>
+
+    <section id="poruchy-spravania">
+      <h3>Poruchy správania</h3>
+      <p>Text o poruchách správania...</p>
+    </section>
+  </section>
+
+  <section id="publikacie">
+    <h2>Publikácie</h2>
+    <p>Tu budú publikácie a materiály na stiahnutie.</p>
+  </section>
+
+  <section id="clanky">
+    <h2>Články</h2>
+    <p>Prehľad článkov a noviniek.</p>
+  </section>
+
+  <section id="onas">
+    <h2>O nás</h2>
+    <p>Informácie o tíme a misií stránky SpecPedInfo.</p>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Tu môže byť kontaktný formulár alebo informácie.</p>
+  </section>
+
+</body>
+</html>
