@@ -1,118 +1,167 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SpecPedInfo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #f5f5dc;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #2c2c2c;
+      position: relative;
+    }
+
+    /* Logo v pozadí */
+    .background-logo {
+      position: absolute;
+      top: 200px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.03;
+      max-width: 700px;
+      z-index: 0;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      padding: 20px 0;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    header .logo-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    header .logo-title img {
+      height: 50px;
+      opacity: 0.85;
+    }
+
+    header .logo-title span {
+      font-size: 2.2em;
+      color: #ffffff;
+      font-weight: 700;
     }
 
     nav {
-      background-color: #a7c7e7;
-      width: 100%;
+      background-color: #2e2e2e;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
     }
 
     nav ul {
-      list-style-type: none;
+      list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
-      position: relative;
+      gap: 30px;
     }
 
     nav ul li {
       position: relative;
-      margin: 0 20px;
     }
 
     nav ul li a {
-      display: block;
-      color: orange;
-      text-align: center;
-      padding: 16px;
+      color: #ffffff;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2em;
+      font-weight: 500;
+      padding: 10px 15px;
+      transition: background 0.3s;
     }
 
-    nav ul li:hover > ul {
-      display: block;
+    nav ul li a:hover {
+      background-color: #444;
+      border-radius: 6px;
     }
 
-    nav ul ul {
+    nav ul li ul {
       display: none;
       position: absolute;
-      top: 56px;
+      top: 40px;
       left: 0;
-      background-color: #a7c7e7;
+      background-color: #2e2e2e;
       padding: 0;
-      list-style: none;
+      border-radius: 4px;
       min-width: 280px;
-      z-index: 1000;
+      z-index: 3;
     }
 
-    nav ul ul li {
-      width: 100%;
-      margin: 0;
-    }
-
-    nav ul ul li a {
-      padding: 12px 16px;
-      text-align: left;
-      font-size: 1em;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 3em;
-      font-weight: bold;
-      color: #4a90e2;
-      margin-top: 40px;
-    }
-
-    .intro-text {
-      text-align: center;
-      font-size: 1.2em;
-      max-width: 800px;
-      margin: 20px auto;
-      line-height: 1.6;
-    }
-
-    .hero-image {
-      max-width: 800px;
-      width: 100%;
-      height: auto;
+    nav ul li:hover ul {
       display: block;
-      margin: 0 auto;
     }
 
-    /* Štýl pre sekciu O nás */
-    #onas {
+    nav ul li ul li {
+      width: 100%;
+    }
+
+    nav ul li ul li a {
+      display: block;
+      padding: 10px 20px;
+    }
+
+    section#onas {
       max-width: 900px;
-      margin: 60px auto;
-      padding: 20px;
-      font-size: 1.2rem;
-      line-height: 1.8;
-      background-color: #ffffffc2;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: #ffffffee;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
     }
 
-    #onas h2 {
+    section#onas h2 {
       text-align: center;
-      color: #2c3e50;
       font-size: 2rem;
+      color: #1f1f1f;
       margin-bottom: 20px;
+    }
+
+    section#onas p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      header .logo-title span {
+        font-size: 1.5em;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li ul {
+        position: static;
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Logo ako pozadie -->
+  <img src="images/uvodny-obrazok.png.png" alt="Dekoratívne logo" class="background-logo" />
+
+  <!-- Hlavička s logom a názvom -->
+  <header>
+    <div class="logo-title">
+      <img src="images/uvodny-obrazok.png.png" alt="Logo">
+      <span>SpecPedInfo</span>
+    </div>
+  </header>
 
   <!-- Navigácia -->
   <nav>
@@ -128,7 +177,7 @@
           <li><a href="#">Pedagogika psychosociálne narušených</a></li>
           <li><a href="#">Pedagogika jedincov s NKS</a></li>
           <li><a href="#">Pedagogika jedincov s poruchami učenia a pozornosti</a></li>
-          <li><a href="#">Pedagogika jedincov s PAS</a></li>
+          <li><a href="#pas">Pedagogika jedincov s PAS</a></li>
           <li><a href="#">Pedagogika viacnásobne znevýhodnených</a></li>
           <li><a href="#">Pedagogika jedincov zo sociálne podmieneného prostredia</a></li>
         </ul>
@@ -138,18 +187,6 @@
       <li><a href="#">Kontakt</a></li>
     </ul>
   </nav>
-
-  <!-- Úvodný obrázok -->
-  <img src="images/uvodny-obrazok.png" alt="Inkluzívna ilustrácia" class="hero-image">
-
-  <!-- Nadpis -->
-  <h1>SpecPedInfo</h1>
-
-  <!-- Úvodný text -->
-  <p class="intro-text">
-    Volám sa <strong>Mgr. Kristína Vasiľ</strong> a som špeciálna pedagogička. Cieľom tejto stránky je vytvoriť jedno prehľadné miesto, kde nájdete <strong>aktuálne informácie, infobrožúry, články a výskumné poznatky</strong> zo sveta špeciálnej pedagogiky. <br><br>
-    Chcem sprostredkovať nové poznatky <strong>zrozumiteľne, odborne, ale najmä prakticky</strong> – tak, aby im rozumeli nielen odborníci, ale aj rodičia, asistenti či pedagógovia v praxi.
-  </p>
 
   <!-- Sekcia O nás -->
   <section id="onas">
