@@ -4,161 +4,140 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SpecPedInfo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #f5f5dc;
+      font-family: Arial, sans-serif;
     }
 
-    header {
-      background-color: #2c3e50;
-      padding: 20px 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .logo-area img {
-      height: 50px;
-      opacity: 0.7;
-    }
-
-    .logo {
-      color: #ecf0f1;
-      font-size: 2.5rem;
-      font-weight: bold;
+    nav {
+      background-color: #a7c7e7;
+      width: 100%;
     }
 
     nav ul {
-      list-style: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      padding: 0;
-      margin: 20px 0 0;
-    }
-
-    nav ul li {
-      margin: 10px 15px;
       position: relative;
     }
 
+    nav ul li {
+      position: relative;
+      margin: 0 20px;
+    }
+
     nav ul li a {
+      display: block;
+      color: orange;
+      text-align: center;
+      padding: 16px;
       text-decoration: none;
-      color: #ecf0f1;
-      font-weight: 500;
-      padding: 10px 15px;
-      border-radius: 6px;
-      transition: background-color 0.3s;
-    }
-
-    nav ul li a:hover {
-      background-color: #34495e;
-    }
-
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      top: 45px;
-      left: 0;
-      background-color: #34495e;
-      border-radius: 6px;
-      padding: 10px 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      min-width: 250px;
-      z-index: 1000;
+      font-weight: bold;
+      font-size: 1.2em;
     }
 
     nav ul li:hover > ul {
       display: block;
     }
 
-    nav ul li ul li {
+    nav ul ul {
+      display: none;
+      position: absolute;
+      top: 56px;
+      left: 0;
+      background-color: #a7c7e7;
+      padding: 0;
+      list-style: none;
+      min-width: 280px;
+      z-index: 1000;
+    }
+
+    nav ul ul li {
+      width: 100%;
       margin: 0;
     }
 
-    nav ul li ul li a {
-      padding: 10px 20px;
-      display: block;
-    }
-
-    .hero-image {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 30px auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    nav ul ul li a {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 1em;
     }
 
     h1 {
       text-align: center;
-      font-size: 3rem;
-      color: #2c3e50;
-      margin-top: 20px;
+      font-size: 3em;
+      font-weight: bold;
+      color: #4a90e2;
+      margin-top: 40px;
     }
 
     .intro-text {
       text-align: center;
-      font-size: 1.2rem;
+      font-size: 1.2em;
       max-width: 800px;
-      margin: 20px auto 40px auto;
-      line-height: 1.7;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+
+    .hero-image {
+      max-width: 800px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Štýl pre sekciu O nás */
+    #onas {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      background-color: #ffffffc2;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    #onas h2 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <div class="logo-area">
-        <img src="images/uvodny-obrazok.png.png" alt="Logo">
-        <div class="logo">SpecPedInfo</div>
-      </div>
-      <nav>
+  <!-- Navigácia -->
+  <nav>
+    <ul>
+      <li><a href="#">Domov</a></li>
+      <li><a href="#onas">O nás</a></li>
+      <li><a href="#">Infobrožúry, publikácie a články</a></li>
+      <li>
+        <a href="#">Podľa typu znevýhodnenia</a>
         <ul>
-          <li><a href="#">Domov</a></li>
-          <li><a href="#">O nás</a></li>
-          <li><a href="#">Infobrožúry, publikácie a články</a></li>
-          <li>
-            <a href="#">Podľa typu znevýhodnenia</a>
-            <ul>
-              <li><a href="#">Pedagogika mentálne znevýhodnených</a></li>
-              <li><a href="#">Pedagogika telesne znevýhodnených</a></li>
-              <li><a href="#">Pedagogika psychosociálne narušených</a></li>
-              <li><a href="#">Pedagogika jedincov s NKS</a></li>
-              <li><a href="#">Pedagogika jedincov s poruchami učenia a pozornosti</a></li>
-              <li><a href="#">Pedagogika jedincov s PAS</a></li>
-              <li><a href="#">Pedagogika viacnásobne znevýhodnených</a></li>
-              <li><a href="#">Pedagogika jedincov zo sociálne podmieneného prostredia</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Výskumy</a></li>
-          <li><a href="#">Novinky</a></li>
-          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Pedagogika mentálne znevýhodnených</a></li>
+          <li><a href="#">Pedagogika telesne znevýhodnených</a></li>
+          <li><a href="#">Pedagogika psychosociálne narušených</a></li>
+          <li><a href="#">Pedagogika jedincov s NKS</a></li>
+          <li><a href="#">Pedagogika jedincov s poruchami učenia a pozornosti</a></li>
+          <li><a href="#">Pedagogika jedincov s PAS</a></li>
+          <li><a href="#">Pedagogika viacnásobne znevýhodnených</a></li>
+          <li><a href="#">Pedagogika jedincov zo sociálne podmieneného prostredia</a></li>
         </ul>
-      </nav>
-    </div>
-  </header>
+      </li>
+      <li><a href="#">Výskumy</a></li>
+      <li><a href="#">Novinky</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+  </nav>
 
   <!-- Úvodný obrázok -->
   <img src="images/uvodny-obrazok.png" alt="Inkluzívna ilustrácia" class="hero-image">
@@ -171,6 +150,26 @@
     Volám sa <strong>Mgr. Kristína Vasiľ</strong> a som špeciálna pedagogička. Cieľom tejto stránky je vytvoriť jedno prehľadné miesto, kde nájdete <strong>aktuálne informácie, infobrožúry, články a výskumné poznatky</strong> zo sveta špeciálnej pedagogiky. <br><br>
     Chcem sprostredkovať nové poznatky <strong>zrozumiteľne, odborne, ale najmä prakticky</strong> – tak, aby im rozumeli nielen odborníci, ale aj rodičia, asistenti či pedagógovia v praxi.
   </p>
+
+  <!-- Sekcia O nás -->
+  <section id="onas">
+    <h2>O nás</h2>
+    <p>
+      Volám sa <strong>Mgr. Kristína Vasiľ</strong> a som vyštudovaná špeciálna pedagogička. Počas štúdia aj praxe som si uvedomila, ako široká, komplexná a často neprehľadná vie byť téma špeciálnej pedagogiky – najmä pre rodičov, študentov, ale aj samotných odborníkov.
+    </p>
+    <p>
+      Dnes žijeme v dobe, kde nás z každej strany zahlcuje <strong>informačný hluk</strong> – často nepresný, rozporuplný alebo neaktuálny. Ak ide o zdravie a rozvoj našich detí, je prirodzené, že chceme len to najlepšie. No nájsť overené, zrozumiteľné a praktické informácie je niekedy nad ľudské sily.
+    </p>
+    <p>
+      Práve preto vznikla myšlienka projektu <strong>SpecPedInfo</strong> – vytvoriť miesto, kde sa na jednom mieste zhromažďujú <strong>dôležité informácie</strong> o jednotlivých oblastiach znevýhodnenia, terapiách, podpore, prístupoch, ako aj o nových výskumoch či liečbe.
+    </p>
+    <p>
+      Mojím cieľom je, aby táto stránka slúžila ako <strong>pomocná ruka</strong> – či už ste rodič, študent, asistent alebo odborník. Chcem zrozumiteľne vysvetliť aj to, čo sa zdá nepochopiteľné. Okrem toho vytváram priestor na <strong>zdieľanie prác, materiálov a skúseností</strong>, ktoré môžu pomôcť ďalším rodinám dostať sa k relevantným informáciám.
+    </p>
+    <p>
+      Verím, že keď sa poznanie delí, rastie – a každý malý krok v pochopení vedie k veľkej zmene v živote dieťaťa.
+    </p>
+  </section>
 
 </body>
 </html>
