@@ -50,6 +50,7 @@
       margin: 20px auto;
       display: block;
       max-width: 90%;
+      height: auto;
       background: white;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -86,10 +87,10 @@
   </div>
 
   <div class="controls">
-    <button onclick="prevPages()">⬅ Predchádzajúce strany</button>
+    <button onclick="prevPage()">⬅ Predchádzajúca strana</button>
     <button onclick="zoomOut()">➖ Zmenšiť</button>
     <button onclick="zoomIn()">➕ Zväčšiť</button>
-    <button onclick="nextPages()">➡ Ďalšie strany</button>
+    <button onclick="nextPage()">➡ Ďalšia strana</button>
   </div>
 
   <canvas id="pdf-canvas"></canvas>
@@ -104,60 +105,40 @@
 
     pdfjsLib.getDocument(url).promise.then(pdf => {
       pdfDoc = pdf;
-      renderPages();
+      renderPage();
     });
 
-    function renderPages() {
-      if (pageNum > pdfDoc.numPages) return;
-      pdfDoc.getPage(pageNum).then(page1 => {
-        const vp1 = page1.getViewport({ scale });
-        const nextPage = pageNum + 1;
-        if (nextPage > pdfDoc.numPages) {
-          canvas.width = vp1.width;
-          canvas.height = vp1.height;
-          page1.render({ canvasContext: ctx, viewport: vp1 });
-          return;
-        }
-        pdfDoc.getPage(nextPage).then(page2 => {
-          const vp2 = page2.getViewport({ scale });
-          canvas.width = vp1.width + vp2.width;
-          canvas.height = Math.max(vp1.height, vp2.height);
-          page1.render({
-            canvasContext: ctx,
-            viewport: vp1,
-            transform: [1, 0, 0, 1, 0, 0]
-          });
-          page2.render({
-            canvasContext: ctx,
-            viewport: vp2,
-            transform: [1, 0, 0, 1, vp1.width, 0]
-          });
-        });
+    function renderPage() {
+      pdfDoc.getPage(pageNum).then(page => {
+        const viewport = page.getViewport({ scale });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        page.render({ canvasContext: ctx, viewport: viewport });
       });
+    }
+
+    function nextPage() {
+      if (pageNum < pdfDoc.numPages) {
+        pageNum++;
+        renderPage();
+      }
+    }
+
+    function prevPage() {
+      if (pageNum > 1) {
+        pageNum--;
+        renderPage();
+      }
     }
 
     function zoomIn() {
       scale += 0.2;
-      renderPages();
+      renderPage();
     }
 
     function zoomOut() {
       scale = Math.max(0.6, scale - 0.2);
-      renderPages();
-    }
-
-    function nextPages() {
-      if (pageNum + 2 <= pdfDoc.numPages) {
-        pageNum += 2;
-        renderPages();
-      }
-    }
-
-    function prevPages() {
-      if (pageNum - 2 >= 1) {
-        pageNum -= 2;
-        renderPages();
-      }
+      renderPage();
     }
   </script>
 
