@@ -153,7 +153,22 @@
 <body>
 
   <!-- Logo ako pozadie -->
-  <img src="images/uvodny-obrazok.png.png" alt="Dekoratívne logo" class="background-logo" />
+  body::before {
+  content: "";
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background-image: url('images/uvodny-obrazok.png.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+}
+
 
   <!-- Hlavička s logom a názvom -->
   <header>
