@@ -15,7 +15,6 @@
       position: relative;
     }
 
-    /* Logo v pozadí */
     .background-logo {
       position: absolute;
       top: 200px;
@@ -96,8 +95,7 @@
       z-index: 3;
     }
 
-    nav ul li:hover > ul,
-    nav ul li ul:hover {
+    nav ul li.open > ul.submenu {
       display: block;
     }
 
@@ -152,31 +150,8 @@
   </style>
 </head>
 <body>
-<script>
-  document.querySelectorAll('nav ul li').forEach(function(menuItem) {
-    let timeout;
-
-    menuItem.addEventListener('mouseenter', function () {
-      clearTimeout(timeout);
-      const submenu = menuItem.querySelector('ul');
-      if (submenu) submenu.style.display = 'block';
-    });
-
-    menuItem.addEventListener('mouseleave', function () {
-      const submenu = menuItem.querySelector('ul');
-      if (submenu) {
-        timeout = setTimeout(() => {
-          submenu.style.display = 'none';
-        }, 400); // oneskorenie v milisekundách
-      }
-    });
-  });
-</script>
-
-  <!-- Logo ako pozadie -->
   <img src="images/uvodny-obrazok.png.png" alt="Dekoratívne logo" class="background-logo" />
 
-  <!-- Hlavička s logom a názvom -->
   <header>
     <div class="logo-title">
       <img src="images/uvodny-obrazok.png.png" alt="Logo">
@@ -184,15 +159,14 @@
     </div>
   </header>
 
-  <!-- Navigácia -->
   <nav>
     <ul>
       <li><a href="#">Domov</a></li>
       <li><a href="#onas">O nás</a></li>
       <li><a href="#">Infobrožúry, publikácie a články</a></li>
-      <li>
-        <a href="#">Podľa typu znevýhodnenia</a>
-        <ul>
+      <li class="has-submenu">
+        <a href="#" id="submenu-toggle">Podľa typu znevýhodnenia</a>
+        <ul class="submenu">
           <li><a href="#">Pedagogika mentálne znevýhodnených</a></li>
           <li><a href="mp_infobrozura.pdf" target="_blank">Pedagogika mentálneho znevýhodnenia</a></li>
           <li><a href="#">Pedagogika telesne znevýhodnených</a></li>
@@ -210,7 +184,6 @@
     </ul>
   </nav>
 
-  <!-- Sekcia O nás -->
   <section id="onas">
     <h2>O nás</h2>
     <p>
@@ -230,5 +203,18 @@
     </p>
   </section>
 
+  <script>
+    const toggle = document.getElementById('submenu-toggle');
+    const submenuParent = toggle.closest('.has-submenu');
+
+    document.addEventListener('click', function (e) {
+      if (submenuParent.contains(e.target)) {
+        e.preventDefault();
+        submenuParent.classList.toggle('open');
+      } else {
+        submenuParent.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
