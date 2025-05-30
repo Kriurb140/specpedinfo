@@ -152,6 +152,26 @@
   </style>
 </head>
 <body>
+<script>
+  document.querySelectorAll('nav ul li').forEach(function(menuItem) {
+    let timeout;
+
+    menuItem.addEventListener('mouseenter', function () {
+      clearTimeout(timeout);
+      const submenu = menuItem.querySelector('ul');
+      if (submenu) submenu.style.display = 'block';
+    });
+
+    menuItem.addEventListener('mouseleave', function () {
+      const submenu = menuItem.querySelector('ul');
+      if (submenu) {
+        timeout = setTimeout(() => {
+          submenu.style.display = 'none';
+        }, 400); // oneskorenie v milisekundách
+      }
+    });
+  });
+</script>
 
   <!-- Logo ako pozadie -->
   <img src="images/uvodny-obrazok.png.png" alt="Dekoratívne logo" class="background-logo" />
